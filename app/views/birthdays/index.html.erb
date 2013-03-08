@@ -1,0 +1,104 @@
+
+<div class="navbar navbar-fixed-top navbar-inner">
+  <div class="brand">
+    <a href="#">
+<%if signed_in?%>
+<%if current_user.email == "leangmeyheng@yahoo.com"%>
+Hello! Mey
+<%elsif current_user.email == "new.mingliang@gmail.com"%>
+Hello! Reaksmey
+<%end%>
+</a>
+</div>
+
+ <div class="container-fluid"> 
+<div class="nav-collapse">
+  <ul class="nav">
+    <li><%=link_to "Home", birthdays_path%></li>
+    <li><%=link_to "comment", birthdays_path%></li>
+  </ul>
+
+  </div>
+
+  <div class="pull-right">
+  <div class="nav-collapse">
+  <ul class="nav">
+    <li><%=link_to "Edit",edit_user_registration_path%></li>
+    <li><%= link_to "Log out ", destroy_user_session_path, method: :delete%></li>
+  </ul>
+
+  </div>
+</div>
+</div>
+
+
+</div>
+<div class="top"></div>
+<div class="container">
+<div class="page-header">
+
+<%=image_tag "happybirthday.jpg", :class=> "photo" %>
+</div>
+</div>
+
+
+<div class="container">
+<div class="leaderboard">
+<h1>Listing birthdays</h1>
+</div>
+
+<% @birthdays.each do |birthday| %>
+  
+
+    <div class="row">
+    <div class="span6"><%= image_tag(birthday.img, class:"photo") %></div>
+      <div class="span6-edited">
+
+     <div class="box">
+     </div>
+        <div class="span5">
+          <strong><%=birthday.title%><br></strong>
+      <%= birthday.wish %>
+        </div>
+    </div>
+  </div>
+
+
+<%if current_user.email == "leangmeyheng@yahoo.com"%>
+
+    <div class="span12"><hr></div>
+
+    <%elsif current_user.email == "new.mingliang@gmail.com"%>
+      
+       <div class="pull-right">
+      <div class="span12">
+ 
+      
+    <%= link_to 'Show', birthday, :class=> "btn btn-success" %>
+    <%= link_to 'Edit', edit_birthday_path(birthday), :class=> "btn btn-warning" %>
+    <%= link_to 'Destroy', birthday, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
+
+  </div>
+  </div>
+
+
+<div class="span12">
+    <%= link_to 'New Birthday', new_birthday_path, :class => "btn btn-primary" %>
+  </div>
+  <%end%>
+
+<% end %>
+
+
+
+
+<%else%>
+
+<script type="text/javascript">
+
+window.location.href="/users/sign_in"
+
+</script>
+<%end%>
+
+</div>

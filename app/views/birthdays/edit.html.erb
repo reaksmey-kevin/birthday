@@ -1,0 +1,14 @@
+<%if current_user.email == "leanmeyheng@gmail.com"%>
+<script type="text/javascript">
+window.location.href="/birthdays"
+</script>
+
+<%else%>
+
+<h1>Editing birthday</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @birthday %> |
+<%= link_to 'Back', birthdays_path %>
+<%end%>

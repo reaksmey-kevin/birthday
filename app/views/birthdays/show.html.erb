@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @birthday.title %>
+</p>
+
+<p>
+  <b>Img:</b>
+  <%= @birthday.img %>
+</p>
+
+<p>
+  <b>Wish:</b>
+  <%= @birthday.wish %>
+</p>
+
+
+<%= link_to 'Edit', edit_birthday_path(@birthday) %> |
+<%= link_to 'Back', birthdays_path %>
