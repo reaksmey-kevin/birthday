@@ -1,0 +1,11 @@
+
+<%if signed_in?%>
+
+<div class="navbar navbar-fixed-top navbar-inner"><h4>Comment</h4></div>
+
+<%= render 'form' %>
+
+<%else%>
+
+<%=render 'layouts/location'%>
+<%end%>

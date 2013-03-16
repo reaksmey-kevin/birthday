@@ -3,7 +3,7 @@ class BirthdaysController < ApplicationController
   # GET /birthdays.json
   def index
     @birthdays = Birthday.all
-
+    @posts=Post.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @birthdays }
@@ -35,6 +35,7 @@ class BirthdaysController < ApplicationController
   # GET /birthdays/1/edit
   def edit
     @birthday = Birthday.find(params[:id])
+
   end
 
   # POST /birthdays

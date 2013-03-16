@@ -1,4 +1,7 @@
 Apps::Application.routes.draw do
+  resources :posts
+
+
   resources :birthdays
 
 

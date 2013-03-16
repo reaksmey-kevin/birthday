@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305153157) do
+ActiveRecord::Schema.define(:version => 20130310061928) do
 
   create_table "birthdays", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,30 @@ ActiveRecord::Schema.define(:version => 20130305153157) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "comments", :force => true do |t|
+    t.string   "name"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "name"
+    t.text     "post_comment"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "usercomments", :force => true do |t|
+    t.string   "birthday_id"
+    t.string   "name"
+    t.text     "say_something"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "usercomments", ["birthday_id"], :name => "index_usercomments_on_birthday_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

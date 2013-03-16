@@ -44,7 +44,7 @@ Hello! Reaksmey
 
 <div class="container">
 <div class="leaderboard">
-<h1>Listing birthdays</h1>
+<h1>Reaksmey's Gift</h1>
 </div>
 
 <% @birthdays.each do |birthday| %>
@@ -56,29 +56,46 @@ Hello! Reaksmey
 
      <div class="box">
      </div>
+
+
         <div class="span5">
           <strong><%=birthday.title%><br></strong>
       <%= birthday.wish %>
         </div>
+     
     </div>
   </div>
+  <!-- comment !-->
+  
+
+
+
+
+
+
+
 
 
 <%if current_user.email == "leangmeyheng@yahoo.com"%>
 
-    <div class="span12"><hr></div>
+
 
     <%elsif current_user.email == "new.mingliang@gmail.com"%>
-      
-       <div class="pull-right">
+
       <div class="span12">
  
-      
-    <%= link_to 'Show', birthday, :class=> "btn btn-success" %>
-    <%= link_to 'Edit', edit_birthday_path(birthday), :class=> "btn btn-warning" %>
-    <%= link_to 'Destroy', birthday, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
+<strong>
+ <% if birthday.created_at > Time.now.beginning_of_day %>
+    <%="#{time_ago_in_words(birthday.created_at)} ago"%>  
+<% else %>
+    <%= birthday.created_at.strftime("%b %d, %Y") %>
+<% end %>
+      </strong><br>
+    <%= link_to 'Show', birthday, :class=> "btn btn-mini btn-success" %>
+    <%= link_to 'Edit', edit_birthday_path(birthday), :class=> "btn btn-mini btn-warning" %>
+    <%= link_to 'Destroy', birthday, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini" %>
 
-  </div>
+
   </div>
 
 
@@ -94,11 +111,59 @@ Hello! Reaksmey
 
 <%else%>
 
-<script type="text/javascript">
-
-window.location.href="/users/sign_in"
-
-</script>
+<%=render 'layouts/location'%>
 <%end%>
 
+
+
+</div>
+<div class="container">
+<% @posts.each do |post|%>
+
+  <strong><%=post.name%></strong>
+<div class="row">
+<div class="span9">
+  <div class="box"></div>
+<div class="well-edit"> 
+<div class="row">
+  <div class="span8">
+<%=post.post_comment%>
+  </div>
+  <div class="span9">
+  <div class="span3">
+
+    <%= link_to 'Edit', edit_post_path(post), :class=> "btn btn-mini btn-primary" %>
+    <%= link_to 'Remove', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-mini btn-warning" %>
+
+</div>
+<div class="pull-right">
+  <div class="span3"><strong>
+  
+<% if post.created_at > Time.now.beginning_of_day %>
+<%="#{time_ago_in_words(post.created_at)} ago"%>
+<%else%>
+   <%= post.created_at.strftime("%b %d, %Y") %>
+   <%end%>
+
+</strong>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+<!--update comment !-->
+
+</div>
+
+<%end%>
+
+<div class="span12">
+ 
+<%=link_to "comment", new_post_path, :class=>"btn" %>
+
+</div>
 </div>
