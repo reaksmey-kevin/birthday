@@ -31,6 +31,9 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -46,6 +49,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.4)
     journey (1.0.4)
@@ -76,6 +80,9 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-gallery (0.3.1)
+      hashie (~> 1.2.0)
+      rails
     railties (3.2.12)
       actionpack (= 3.2.12)
       activesupport (= 3.2.12)
@@ -113,10 +120,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
   rails (= 3.2.12)
+  rails-gallery
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

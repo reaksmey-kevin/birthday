@@ -51,7 +51,7 @@ Hello! Reaksmey
   
 
     <div class="row">
-    <div class="span6"><%= image_tag(birthday.img, class:"photo") %></div>
+    <div class="span6"><%= image_tag(birthday.img, class:"img-polaroid") %></div>
       <div class="span6-edited">
 
      <div class="box">
@@ -76,11 +76,11 @@ Hello! Reaksmey
 
 
 
-<%if current_user.email == "leangmeyheng@yahoo.com"%>
 
 
 
-    <%elsif current_user.email == "new.mingliang@gmail.com"%>
+
+    
 
       <div class="span12">
  
@@ -99,10 +99,8 @@ Hello! Reaksmey
   </div>
 
 
-<div class="span12">
-    <%= link_to 'New Birthday', new_birthday_path, :class => "btn btn-primary" %>
-  </div>
-  <%end%>
+
+
 
 <% end %>
 
@@ -113,10 +111,13 @@ Hello! Reaksmey
 
 <%=render 'layouts/location'%>
 <%end%>
-
+<div class="span12">
+    <%= link_to 'New Birthday', new_birthday_path, :class => "btn btn-primary" %>
+  </div>
 
 
 </div>
+<a name="comment"></a>
 <div class="container">
 <% @posts.each do |post|%>
 
@@ -130,23 +131,19 @@ Hello! Reaksmey
 <%=post.post_comment%>
   </div>
   <div class="span9">
-  <div class="span3">
-
+  <div class="span8-edited">
+    <blockquote class="pull-right">
+    <small >
+<%if post.created_at > Time.now.beginning_of_day %>
+<%="#{time_ago_in_words(post.created_at)} ago"%>
+<%else%>
+<%=post.created_at.strftime("%b %d, %Y")%>
+<%end%>
+    </small>
+</blockquote>
     <%= link_to 'Edit', edit_post_path(post), :class=> "btn btn-mini btn-primary" %>
     <%= link_to 'Remove', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-mini btn-warning" %>
 
-</div>
-<div class="pull-right">
-  <div class="span3"><strong>
-  
-<% if post.created_at > Time.now.beginning_of_day %>
-<%="#{time_ago_in_words(post.created_at)} ago"%>
-<%else%>
-   <%= post.created_at.strftime("%b %d, %Y") %>
-   <%end%>
-
-</strong>
-</div>
 </div>
 </div>
 
@@ -166,4 +163,5 @@ Hello! Reaksmey
 <%=link_to "comment", new_post_path, :class=>"btn" %>
 
 </div>
+
 </div>
