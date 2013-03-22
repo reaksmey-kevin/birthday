@@ -54,13 +54,10 @@ Hello! Reaksmey
     <div class="span6"><%= image_tag(birthday.img, class:"img-polaroid") %></div>
       <div class="span6-edited">
 
-     <div class="box">
-     </div>
 
-
-        <div class="span5">
+      <div class="span5">
           <strong><%=birthday.title%><br></strong>
-      <%= birthday.wish %>
+        <%= birthday.wish %>
         </div>
      
     </div>
@@ -69,28 +66,17 @@ Hello! Reaksmey
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
-
       <div class="span12">
  
-<strong>
+<blockquote>
+  <small>
  <% if birthday.created_at > Time.now.beginning_of_day %>
     <%="#{time_ago_in_words(birthday.created_at)} ago"%>  
 <% else %>
     <%= birthday.created_at.strftime("%b %d, %Y") %>
 <% end %>
-      </strong><br>
+</small>
+      </blockquote>
     <%= link_to 'Show', birthday, :class=> "btn btn-mini btn-success" %>
     <%= link_to 'Edit', edit_birthday_path(birthday), :class=> "btn btn-mini btn-warning" %>
     <%= link_to 'Destroy', birthday, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini" %>
@@ -98,9 +84,9 @@ Hello! Reaksmey
 
   </div>
 
-
-
-
+<div class="span11">
+<hr>
+</div>
 
 <% end %>
 
@@ -112,7 +98,7 @@ Hello! Reaksmey
 <%=render 'layouts/location'%>
 <%end%>
 <div class="span12">
-    <%= link_to 'New Birthday', new_birthday_path, :class => "btn btn-primary" %>
+    <%= link_to 'Create Birthday', new_birthday_path, :class => "btn btn-primary" %>
   </div>
 
 

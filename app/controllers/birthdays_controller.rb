@@ -45,7 +45,7 @@ class BirthdaysController < ApplicationController
 
     respond_to do |format|
       if @birthday.save
-        format.html { redirect_to @birthday, notice: 'Birthday was successfully created.' }
+        format.html { redirect_to birthdays_url }
         format.json { render json: @birthday, status: :created, location: @birthday }
       else
         format.html { render action: "new" }

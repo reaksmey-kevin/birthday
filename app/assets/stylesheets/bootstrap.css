@@ -372,25 +372,50 @@ position: relative;
 
 }
 .span6-edited {
-  width: 460px;
- background: #e6f0a3; /* Old browsers */
-background: -moz-linear-gradient(top,  #e6f0a3 0%, #d2e638 27%, #c3d825 47%, #c3d825 69%, #dbf043 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0a3), color-stop(27%,#d2e638), color-stop(47%,#c3d825), color-stop(69%,#c3d825), color-stop(100%,#dbf043)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#dbf043',GradientType=0 ); /* IE6-9 */
-
-  padding-bottom: 20px;
+position: relative;
+background: #C9DE2D;
+padding: 25px;
     border-radius: 3px;
      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
        -o-border-radius: 3px;
-        -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
-       z-index: 100;
+       border:4px solid #f5f5f5;
+       box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+       -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+       -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+       -o-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+      
+
+}
+.span6-edited:after, .span6-edited:before{
+content: " ";
+border: solid transparent;
+position: absolute;
+height: 0;
+width: 0;
+right: 100%;
+
+
+}
+.span6-edited:after{
+border-color: rgba(136, 183, 213, 0);
+
+border-right-color: #C9DE2D;
+ border-width: 15px; 
+ top: 50%; 
+ margin-top: -30px;
+
+}
+.span6-edited:before{
+border-color: rgba(136, 183, 213, 0);
+border-width: 20px;
+border-right-color:#f5f5f5; 
+top: 50%;
+margin-top: -35px;
+
+
+
+
 }
 
 
@@ -1275,6 +1300,7 @@ input[type="checkbox"] {
 select,
 input[type="file"] {
   height: 30px;
+  background: #f5f5f5;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
 
   *margin-top: 4px;
@@ -5302,13 +5328,6 @@ input[type="submit"].btn.btn-mini {
  -o-animation-name:fadeInDown;
   -o-animation-duration:1.5s;
 
-
-
-
-
-
-
-
   position: absolute;
   top: 10%;
   left: 50%;
@@ -5328,6 +5347,7 @@ input[type="submit"].btn.btn-mini {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding-box;
           background-clip: padding-box;
+      z-index: -1;
 }
 
 .modal.fade {
@@ -6355,30 +6375,6 @@ margin-left: auto;
 }
 
 
-.span6-edited .box{
-top: 13px;  
-left: 0px;
-width: 50px;
-height: 50px;
-position: relative;
-background: #e6f0a3; /* Old browsers */
-background: -moz-linear-gradient(top,  #e6f0a3 0%, #d2e638 27%, #c3d825 47%, #c3d825 69%, #dbf043 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0a3), color-stop(27%,#d2e638), color-stop(47%,#c3d825), color-stop(69%,#c3d825), color-stop(100%,#dbf043)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #e6f0a3 0%,#d2e638 27%,#c3d825 47%,#c3d825 69%,#dbf043 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#dbf043',GradientType=0 ); /* IE6-9 */
-
--webkit-transform: rotatez(45deg);
-   -moz-transform: rotatez(45deg);
-    -ms-transform: rotatez(45deg);
-     -o-transform: rotatez(45deg);
-        transform: rotatez(45deg);
-
-z-index: -1;
-
-}
 
 .text-small{
 height: 240;
