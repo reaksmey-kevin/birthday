@@ -7,6 +7,7 @@ gem 'rails', '3.2.12'
 gem 'pg'
 
 
+
 gem 'carrierwave'
 gem 'devise'
 # Gems used only for assets and not required
@@ -34,6 +35,6 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
+gem 'rake'
 # To use debugger
 # gem 'debugger'

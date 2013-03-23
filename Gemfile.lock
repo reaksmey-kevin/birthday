@@ -132,6 +132,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.12)
   rails-gallery
+  rake
   sass-rails (~> 3.2.3)
   therubyracer
   uglifier (>= 1.0.3)
